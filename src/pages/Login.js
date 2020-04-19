@@ -9,6 +9,12 @@ export default class Login extends Component {
     onLogin(){
         this.props.history.push("/inicio")
     }
+    componentDidMount(){
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        })
+    }
     render() {
         return (
             <div className="login-component">

@@ -50,6 +50,12 @@ export default class Detalle extends Component {
             },
         ]
     }
+    componentDidMount(){
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        })
+    }
     renderDetalle( item ){
         const{ title, description } = item;
         return(

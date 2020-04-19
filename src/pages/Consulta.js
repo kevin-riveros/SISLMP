@@ -6,6 +6,12 @@ import "../styles/button.scss"
 import "../styles/input.scss"
 
 export default class Consulta extends Component {
+    componentDidMount(){
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        })
+    }
     onSearch(){
         this.props.history.push("/detalle/dukoral")
     }
