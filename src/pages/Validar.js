@@ -53,48 +53,91 @@ export default class Validar extends Component {
                 <div className="container">
                     <br />
                     <h5>Validar transacciones</h5>
-                    <br />
-
-                    <Table hover responsive>
-                        <thead>
-                            <tr>
-                            <th>#</th>
-                            <th>Nombre del medicamento</th>
-                            <th>Lote</th>
-                            <th>Cantidad</th>
-                            <th>Ruc</th>
-                            <th>Opciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {
-                                items.map( ( item, index ) => (
-                                    <tr keY={`item-${item.name}`}>
-                                        <th scope="row">{index}</th>
-                                        <td>{item.name}</td>
-                                        <td>{item.lote}</td>
-                                        <td>{item.count}</td>
-                                        <td>{item.ruc}</td>
-                                        <td>
-                                            <button
-                                                className="btn btn-blue"
-                                                style={{marginRight:10}}
-                                                onClick={ () => this.onAccept() }
-                                            >
-                                                Aceptar
-                                            </button>
-                                            <button
-                                                className="btn btn-red"
-                                                onClick={ () => this.onDecline() }
-                                            >
-                                                Rechazar
-                                            </button>
-                                        </td>
-                                    </tr>
-                                ))
-                            }
-                        </tbody>
-                        </Table>
+                    <div className="row">
+                        <div className="col-12">
+                            <div className="border rounded mt-4" style={{padding: 20}}>
+                                <p style={{margin: "10px 0 0 0"}}>Nombre:</p>
+                                <input
+                                    className="input-component"
+                                    placeholder="Ejemplo: Dukoral"
+                                    style={{margin: 0}}
+                                />
+                                <p style={{margin: "10px 0 0 0"}}>Lote:</p>
+                                <input
+                                    className="input-component"
+                                    placeholder="Ejemplo: 120202FG-0000T7"
+                                    style={{margin: 0}}
+                                    type="email"
+                                />
+                                <p style={{margin: "10px 0 0 0"}}>Cantidad:</p>
+                                <input
+                                    className="input-component"
+                                    placeholder="Ejemplo: 12"
+                                    style={{margin: 0}}
+                                />
+                                <p style={{margin: "10px 0 0 0"}}>Ruc de procedencia:</p>
+                                <input
+                                    className="input-component"
+                                    placeholder="Ejemplo: 2010987654"
+                                    style={{margin: 0}}
+                                    type="email"
+                                />
+                                <button
+                                    className="btn btn-blue"
+                                    onClick={ () => {} }
+                                    style={{margin: "30px 0 0 0"}}
+                                >
+                                    VALIDAR
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-12">
+                            <div className="border rounded mt-4" style={{padding: 20}}>
+                                <Table hover responsive>
+                                    <thead>
+                                        <tr>
+                                        <th>#</th>
+                                        <th>Nombre del medicamento</th>
+                                        <th>Lote</th>
+                                        <th>Cantidad</th>
+                                        <th>Ruc</th>
+                                        <th>Opciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {
+                                            items.map( ( item, index ) => (
+                                                <tr keY={`item-${item.name}`}>
+                                                    <th scope="row">{index}</th>
+                                                    <td>{item.name}</td>
+                                                    <td>{item.lote}</td>
+                                                    <td>{item.count}</td>
+                                                    <td>{item.ruc}</td>
+                                                    <td>
+                                                        <button
+                                                            className="btn btn-blue"
+                                                            style={{marginRight:10}}
+                                                            onClick={ () => this.onAccept() }
+                                                        >
+                                                            Aceptar
+                                                        </button>
+                                                        <button
+                                                            className="btn btn-red"
+                                                            onClick={ () => this.onDecline() }
+                                                        >
+                                                            Rechazar
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            ))
+                                        }
+                                    </tbody>
+                                </Table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </Layout>
         )
